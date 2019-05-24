@@ -12,6 +12,11 @@
  * @param {TreeNode} root
  * @return {string}
  */
+
+function TreeNode(val) {
+  this.val = val;
+  this.left = this.right = null;
+}
 var serialize = function(root) {
   let result = [];
 
@@ -40,13 +45,15 @@ var serialize = function(root) {
  * @return {TreeNode}
  */
 var deserialize = function(data) {
+  //after Serialize
   //[ 1, 2, null, null, 3, 4, null, null, 5, null, null ]
-  // console.log(data)
   if (data.length === 0) {
     return null;
   }
+  debugger;
 
   const deserializeRec = function(nodeList) {
+    debugger;
     if (nodeList.length === 0) {
       return null;
     }
@@ -65,9 +72,17 @@ var deserialize = function(data) {
   return deserializeRec(data);
 };
 
+/* rootNode =1
+ 1.left
+
+
+
+ */
 /**
  * Your functions will be called as such:
  * deserialize(serialize(root));
  */
 
 //Test Input [1,2,3,null,null,4,5]
+
+console.log(deserialize([1, 2, null, null, 3, 4, null, null, 5, null, null]));
